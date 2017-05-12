@@ -1,8 +1,19 @@
-<div>Hello world!</div>
+<div class="main">
+	<div class="interactive-nav">
+		Jump to
+		{{#groups}}
+			<a href="#{{group}}">{{group}}</a>
+		{{/groups}}
+	</div>
 
-{{#groups}}
-<div class='policy-group'>
-<h2>{{group}}</h2>
-{{>cardstack}}
+	{{#groups}}
+	<div class='policy-group' id="{{group}}">
+	<div class="policy-group-text">
+		<h2 class="policy-group-header">{{group}}</h2>
+		<p>{{intro}}</p>
+	</div>
+	{{>cardstack}}
+	<div class='pagination'></div>
+	</div>
+	{{/groups}}
 </div>
-{{/groups}}

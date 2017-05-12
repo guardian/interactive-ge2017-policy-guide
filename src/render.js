@@ -1,10 +1,13 @@
 import mainTemplate from './src/templates/main.html!text'
 import cardstackTemplate from './src/templates/cardstack.html!text'
+import cardTemplate from './src/templates/card.html!text'
+
 import Mustache from 'mustache'
 import rp from 'request-promise'
 
 var partialTemplates = {
-	"cardstack": cardstackTemplate
+	"cardstack": cardstackTemplate,
+	"card": cardTemplate
 };
 
 export function render() {
