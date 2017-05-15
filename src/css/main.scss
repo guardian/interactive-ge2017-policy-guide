@@ -55,18 +55,30 @@ body {
           margin-bottom: 24px;
      }
 
+     @include mq(desktop) {
+          padding-left: 20px;
+          padding-right: 20px;
+     }
+
  }
+
+.swiper-wrapper {
+     @include mq(desktop) {
+          flex-wrap: wrap;
+     }
+}
+
  .swiper-slide {
      font-size: 18px;
      color: #fff;
      border-radius: 6px;
  }
- .swiper-slide:nth-child(2n) {
-     width: 40%;
- }
- .swiper-slide:nth-child(3n) {
-     width: 20%;
- }
+ // .swiper-slide:nth-child(2n) {
+ //     width: 40%;
+ // }
+ // .swiper-slide:nth-child(3n) {
+ //     width: 20%;
+ // }
 
 .swiper-slide {
      box-sizing: border-box;
@@ -99,12 +111,11 @@ body {
      }
 
      @include mq(desktop) {
-          flex: 1;
-          margin-right: 10px;
-
-          &:first-of-type {
-               margin-left: 10px;
-          }
+          // flex: 1;
+          // flex-basis: 300px;
+          width: 300px;
+          margin-right: 20px;
+          margin-bottom: 24px;
      }
 }
 
@@ -198,6 +209,10 @@ div.card-icon {
           padding-left: 20px;
      }
 
+     @include mq(desktop) {
+          padding-left: 20px;
+     }
+
      @include mq(leftCol) {
           padding-left: 180px;
      }
@@ -223,6 +238,10 @@ div.card-icon {
      background-color: #eaeaea;
 
      @include mq($until: tablet) {
+          padding-left: 20px;
+     }
+
+     @include mq(desktop) {
           padding-left: 20px;
      }
 

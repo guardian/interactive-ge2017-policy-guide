@@ -40,6 +40,6 @@ function init() {
 
 }
 
-if(document.querySelector(".interactive-atom").clientWidth < 600) {
+if(document.querySelector(".interactive-atom").clientWidth < 940) {
     init();
 }
