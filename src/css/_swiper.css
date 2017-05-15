@@ -80,7 +80,7 @@
   display: inline-block;
   border-radius: 100%;
   background: #bdbdbd;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #eaeaea;
   opacity: 1;
 }
 button.swiper-pagination-bullet {
@@ -101,8 +101,8 @@ button.swiper-pagination-bullet {
 }
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: transparent;
-  border: 1px solid #bdbdbd;
+  /*background: transparent;*/
+  /*border: 1px solid #bdbdbd;*/
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
   background: #fff;

@@ -11,8 +11,9 @@ function init() {
       var swiper = new Swiper(cardStacks[s], {
             paginationClickable: true,
             loop: true,
-            slidesPerView: 1.1,
-            spaceBetween: 5,
+            slidesPerView: 1.2,
+            loopedSlides: 2,
+            spaceBetween: 10,
             pagination: ".pagination",
             centeredSlides: true
         })

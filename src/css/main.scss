@@ -14,9 +14,6 @@ $snp: #F9D918;
 // @import "fullscreen";
 
 .main {
-     @include mq(desktop) {
-          background-color: #fff;
-     }
      margin: auto;
      min-height: 100vh;
      @each $bp in (tablet, desktop, leftCol, wide) {
@@ -28,7 +25,12 @@ $snp: #F9D918;
 
 .element-atom,
 .interactive-atom {
-    margin: 0 !important;
+     margin-left: -10px;
+     margin-right: -10px;
+     @include mq(desktop) {
+          margin-left: -20px;
+          margin-right: -20px;
+     }
 }
 
 .ios,.android {
@@ -37,8 +39,9 @@ $snp: #F9D918;
      }
 }
 
-html, body {
+body {
      background-color: #eaeaea;
+     overflow-x: initial;
 }
 
 .swiper-container {
@@ -47,6 +50,10 @@ html, body {
      padding-top: 12px;
      // height: 300px;
      display: flex;
+
+     @include mq(desktop) {
+          margin-bottom: 24px;
+     }
 
  }
  .swiper-slide {
@@ -182,9 +189,22 @@ div.card-icon {
      padding: 6px 10px;
      @include fs-headline(2);
      margin-bottom: 12px;
-     border-bottom: 2px solid #dcdcdc;
-     border-top: 2px solid #767676;
-     margin-top: 6px;
+     @include mq($until: desktop) {
+          border-bottom: 2px solid #dcdcdc;
+     }
+     border-top: 2px solid #dcdcdc;
+     // margin-top: 6px;
+     @include mq($until: tablet) {
+          padding-left: 20px;
+     }
+
+     @include mq(leftCol) {
+          padding-left: 180px;
+     }
+
+     @include mq(wide) {
+          padding-left: 260px;
+     }
 }
 
 .policy-group-header {
@@ -192,14 +212,28 @@ div.card-icon {
 }
 
 .interactive-nav {
-     background-color: #63747C;
      padding-top: 12px;
      padding-bottom: 12px;
-     color: rgba(255,255,255,0.4);
+     color: rgba(0,0,0,0.3);
      box-sizing: border-box;
      padding-left: 10px;
      position: -webkit-sticky;
      position: sticky;
+     border-top: 2px solid #dcdcdc;
+     background-color: #eaeaea;
+
+     @include mq($until: tablet) {
+          padding-left: 20px;
+     }
+
+     @include mq(leftCol) {
+          padding-left: 180px;
+          margin-bottom: 24px;
+     }
+
+     @include mq(wide) {
+          padding-left: 260px;
+     }
 
      .android &, 
      .ios & {
@@ -212,7 +246,7 @@ div.card-icon {
      @include fs-textSans(3);
 
      a {
-          color: #fff;
+          color: #63717a;
           &::before {
                content: '/';
                margin-right: 4px;
@@ -220,8 +254,32 @@ div.card-icon {
 
           &:first-of-type {
                &::before {
-                    color: rgba(255,255,255,0.4);
+                    color: rgba(0,0,0,0.3);
                }
           }
      }
 }
+
+.swiper-pagination-bullet-active {
+     border: 1px solid #fff;
+
+     &:first-of-type {
+          background-color: $con;
+          border-color: $con;
+     }
+
+     &:nth-of-type(2) {
+          background-color: $lab;
+          border-color: $lab;
+     }
+
+     &:nth-of-type(3) {
+          background-color: $ld;
+          border-color: $ld;
+     }
+
+     &:nth-of-type(4) {
+          background-color: $snp;
+          border-color: $snp;
+     }
+} 
