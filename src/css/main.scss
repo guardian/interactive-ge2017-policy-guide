@@ -3,10 +3,14 @@
 @import "swiper";
 
 $con: #1A60A9;
-$ld: #F9AF1B;
-$lab: #EC2533;
-$snp: #F9D918;
+// $con: #3163B6;
+$lab: #E42729;
+$ld: #FAB817;
+$snp: #FED905;
 
+$c-grey: #63747C;
+
+$c-bar: #D4D9DF;
 // Uncomment for embeds
 //@import "embed";
 
@@ -27,7 +31,7 @@ $snp: #F9D918;
 .interactive-atom {
      margin-left: -10px;
      margin-right: -10px;
-     @include mq(desktop) {
+     @include mq(tablet) {
           margin-left: -20px;
           margin-right: -20px;
      }
@@ -51,11 +55,11 @@ body {
      // height: 300px;
      display: flex;
 
-     @include mq(desktop) {
+     @include mq(tablet) {
           margin-bottom: 24px;
      }
 
-     @include mq(desktop) {
+     @include mq(tablet) {
           padding-left: 20px;
           padding-right: 20px;
      }
@@ -63,7 +67,7 @@ body {
  }
 
 .swiper-wrapper {
-     @include mq(desktop) {
+     @include mq(tablet) {
           flex-wrap: wrap;
      }
 }
@@ -98,11 +102,13 @@ body {
 
      &.swiper-slide--snp {
           background-color: $snp;
-          color: #333;
-
-          a {
-               color: #333;
-          }
+     }
+     &.swiper-slide--snp,
+     &.swiper-slide--ld {
+         color: #333;
+         a {
+              color: #333;
+         }
      }
 
      p {
@@ -110,7 +116,7 @@ body {
           @include fs-headline(2);
      }
 
-     @include mq(desktop) {
+     @include mq(tablet) {
           // flex: 1;
           // flex-basis: 300px;
           width: 300px;
@@ -195,35 +201,124 @@ div.card-icon {
      }
 }
 
-.policy-group-text {
-     box-sizing: border-box;
-     padding: 6px 10px;
-     @include fs-headline(2);
-     margin-bottom: 12px;
-     @include mq($until: desktop) {
-          border-bottom: 2px solid #dcdcdc;
-     }
-     border-top: 2px solid #dcdcdc;
-     // margin-top: 6px;
-     @include mq($until: tablet) {
-          padding-left: 20px;
-     }
 
-     @include mq(desktop) {
-          padding-left: 20px;
-     }
+.policy-group__header {
+    position: relative;
+    box-sizing: border-box;
+    padding: 6px 10px;
+    overflow: hidden;
+    @include fs-headline(2);
+    margin-bottom: 12px;
+    @include mq($until: tablet) {
+         border-bottom: 2px solid #dcdcdc;
+    }
+    border-top: 2px solid $c-grey;
+    // margin-top: 6px;
+    @include mq($until: tablet) {
+         padding-left: 20px;
+    }
 
-     @include mq(leftCol) {
-          padding-left: 180px;
-     }
+    @include mq(tablet) {
+         padding-left: 20px;
+    }
 
-     @include mq(wide) {
-          padding-left: 260px;
-     }
-}
+    @include mq(leftCol) {
+         padding-left: 180px;
+    }
 
-.policy-group-header {
-     @include fs-header(5);
+    @include mq(wide) {
+         padding-left: 260px;
+    }
+    &__text {
+        padding-left: 10px;
+        width: calc(50% - 10px);
+        max-width: 460px;
+        min-height: 120px;
+        @include mq(tablet) {
+            min-height: 160px;
+        }
+
+        &__title {
+            font-size: 26px;
+            line-height: 22px;
+            margin-bottom: 5.5px;
+            @include mq(tablet) {
+                font-size: 36px;
+                line-height: 42px;
+                margin-bottom: 11px;
+                // transform: translateY(5.5px);
+            }
+        }
+        &__description {
+            font-size: 18px;
+            line-height: 22px;
+            @include mq(tablet) {
+                font-size: 22px;
+                line-height: 26px;
+            }
+        }
+    }
+    &__visual {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        max-width: 580px;
+        @include mq(tablet) {
+            bottom: 11px;
+        }
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: -100%;
+            transform: translateX(20px);
+            height: 2px;
+            z-index: 3;
+            width: 200%;
+            background-color: $c-bar;
+        }
+        &__image {
+            position: absolute;
+            bottom: 0;
+            right: 20px;
+            z-index: 2;
+            width: 100px;
+            height: 136px;
+            @include mq(tablet) {
+                width: 118px;
+                height: 160px;
+                right: auto;
+                left: 20%;
+            }
+        }
+        &__bar {
+            position: relative;
+            z-index: 1;
+            height: 24px;
+            width: 100%;
+            @include mq(tablet) {
+                height: 30px;
+            }
+            &.bar-1 {
+                transform: translateX(10%);
+            }
+            &.bar-2 {
+                opacity: 0.7;
+                transform: translateX(6%);
+            }
+            &.bar-3 {
+                opacity: 0.5;
+                transform: translateX(19%);
+            }
+            &.bar-4 {
+                opacity: 0.3;
+                transform: translateX(0);
+            }
+        }
+    }
 }
 
 .interactive-nav {
@@ -241,7 +336,7 @@ div.card-icon {
           padding-left: 20px;
      }
 
-     @include mq(desktop) {
+     @include mq(tablet) {
           padding-left: 20px;
      }
 
@@ -254,7 +349,7 @@ div.card-icon {
           padding-left: 260px;
      }
 
-     .android &, 
+     .android &,
      .ios & {
           position: initial;
      }
@@ -301,4 +396,4 @@ div.card-icon {
           background-color: $snp;
           border-color: $snp;
      }
-} 
+}

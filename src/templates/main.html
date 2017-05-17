@@ -8,12 +8,21 @@
 
 	{{#groups}}
 	<div class='policy-group' id="{{group}}">
-	<div class="policy-group-text">
-		<h2 class="policy-group-header">{{group}}</h2>
-		<p>{{intro}}</p>
-	</div>
-	{{>cardstack}}
-	<div class='pagination'></div>
+		<div class="policy-group__header">
+			<div class='policy-group__header__text'>
+				<h2 class='policy-group__header__text__title'>{{group}}</h2>
+				<p class='policy-group__header__text__description'>{{intro}}</p>
+			</div>
+			<div class='policy-group__header__visual'>
+				{{#image}}<img class='policy-group__header__visual__image' src='{{image}}'>{{/image}}
+				<div class='policy-group__header__visual__bar bar-1' style='background-color:{{highlight}}'></div>
+				<div class='policy-group__header__visual__bar bar-2' style='background-color:{{highlight}}'></div>
+				<div class='policy-group__header__visual__bar bar-3' style='background-color:{{highlight}}'></div>
+				<div class='policy-group__header__visual__bar bar-4' style='background-color:{{highlight}}'></div>
+			</div>
+		</div>
+		{{>cardstack}}
+		<div class='pagination'></div>
 	</div>
 	{{/groups}}
 </div>

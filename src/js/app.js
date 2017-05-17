@@ -3,7 +3,6 @@ import Swiper from 'swiper'
 var isAndroidApp = (window.location.origin === "file://" ) ? true : false;
 
 function init() {
-    console.log('hello world')
     var swipers = [];
     var cardStacks = document.querySelectorAll('.swiper-container');
 
@@ -11,7 +10,7 @@ function init() {
       var swiper = new Swiper(cardStacks[s], {
             paginationClickable: true,
             loop: true,
-            slidesPerView: 1.2,
+            slidesPerView: 1.168,
             loopedSlides: 2,
             spaceBetween: 10,
             pagination: ".pagination",
@@ -40,6 +39,6 @@ function init() {
 
 }
 
-if(document.querySelector(".interactive-atom").clientWidth < 940) {
+if(document.querySelector("body").clientWidth < 740) {
     init();
 }
