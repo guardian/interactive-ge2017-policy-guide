@@ -18,7 +18,7 @@ $c-snp: #FED905;
 $c-snp-close: #FED905;
 $c-snp-distant: #FFFA00;
 
-$c-grey: #63747C;
+$c-grey: #717D85;
 
 $c-bar: #D4D9DF;
 // Uncomment for embeds
@@ -436,4 +436,64 @@ div.card-icon {
           background-color: $c-snp;
           border-color: $c-snp;
      }
+}
+
+
+// replaces social media headline
+.content__headline {
+    font-size: 0;
+    &::before {
+        content: "Manifestos";
+        font-size: 72px;
+        line-height: 72px;
+        font-weight: 800;
+    }
+}
+.content__standfirst {
+    color: #767676;
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
+    a {
+        color: #444;
+        border-bottom: 1px solid #767676;
+        text-decoration: none;
+    }
+}
+.content--interactive .content__meta-container {
+    position: absolute;
+    z-index: 20;
+    top: -60px;
+    .meta__extras {
+        border-top: 2px solid $c-bar;
+    }
+    .meta__save-for-later,
+    .meta__number {
+        display: none !important;
+    }
+    .social-icon.social-icon--more {
+        background-color: #BDBDBD;
+        circle {
+            fill: #DCDCDC;
+        }
+    }
+    @include mq(leftCol) {
+        width: 140px;
+        left: -160px;
+    }
+    @include mq(wide) {
+        width: 220px;
+        left: -240px;
+    }
+}
+.content__section-label a {
+    color: $c-grey;
+}
+// removes second date line
+.content__head .content__main-column .content__dateline {
+    display: none;
+}
+
+.content__labels {
+    display: block;
 }
