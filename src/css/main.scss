@@ -234,7 +234,8 @@ div.card-icon {
 
 .pagination {
      text-align: center;
-     line-height: 2rem !important;
+     line-height: 5px !important;
+    padding: 18px 0 26px;
 
      .swiper-pagination-bullet {
           margin-right: 2px;
@@ -249,6 +250,8 @@ div.card-icon {
     overflow: hidden;
     @include fs-headline(2);
     margin-bottom: 12px;
+    margin-top: -2px;
+    z-index: 140;
     @include mq($until: tablet) {
          border-bottom: 2px solid #dcdcdc;
     }
@@ -362,6 +365,24 @@ div.card-icon {
 }
 
 .interactive-nav {
+    &__inner {
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 0;
+            right: 20px;
+            height: 2px;
+            background-color: $c-bar;
+        }
+        @include mq(desktop) {
+            max-width: 640px;
+            &:before {
+                left: 0;
+            }
+        }
+    }
      padding-top: 12px;
      padding-bottom: 12px;
      color: rgba(0,0,0,0.3);
@@ -369,8 +390,11 @@ div.card-icon {
      padding-left: 10px;
      position: -webkit-sticky;
      position: sticky;
-     border-top: 2px solid #dcdcdc;
+     border-bottom: 2px solid $c-grey;
      background-color: #eaeaea;
+     font-family: 'Guardian Sans Web', 'Guardian Text Sans Web', Helvetica, Arial, sans-serif;
+     font-size: 16px;
+     line-height: 24px;
 
      @include mq($until: tablet) {
           padding-left: 20px;
@@ -382,7 +406,6 @@ div.card-icon {
 
      @include mq(leftCol) {
           padding-left: 180px;
-          margin-bottom: 24px;
      }
 
      @include mq(wide) {
@@ -394,24 +417,36 @@ div.card-icon {
           position: initial;
      }
 
-     top: 0;
-     z-index: 100;
+     top: -3px;
+     z-index: 160;
 
-     @include fs-textSans(3);
 
      a {
-          color: #63717a;
-          &::before {
-               content: '/';
-               margin-right: 4px;
-          }
+        display: inline-block;
+        color: $c-grey;
+        text-decoration: none;
+        padding: 5px 0;
+        @include mq(desktop) {
+            padding: 0;
+        }
+        &:hover {
+            color: #333;
+            &::before {
+                color: $c-grey;
+            }
+        }
+        &::before {
+            content: '/';
+            margin-right: 4px;
+            opacity: 0.5;
+        }
 
-          &:first-of-type {
-               &::before {
-                    color: rgba(0,0,0,0.3);
-               }
-          }
-     }
+        &:first-of-type {
+            &::before {
+                opacity: 0.25;
+            }
+        }
+    }
 }
 
 .swiper-pagination-bullet-active {
@@ -461,14 +496,21 @@ div.card-icon {
     }
 }
 .content--interactive .content__meta-container {
-    position: absolute;
-    z-index: 20;
-    top: -60px;
+    margin-top: 12px;
+    min-height: none;
+    @include mq(leftCol) {
+        margin-top: 0;
+        position: absolute;
+        z-index: 20;
+        top: -60px;
+    }
+
     .meta__extras {
         border-top: 2px solid $c-bar;
     }
     .meta__save-for-later,
-    .meta__number {
+    .meta__number,
+    .meta__numbers {
         display: none !important;
     }
     .social-icon.social-icon--more {

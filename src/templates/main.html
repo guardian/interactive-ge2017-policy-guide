@@ -1,9 +1,11 @@
 <div class="main">
 	<div class="interactive-nav">
-		Jump to
-		{{#groups}}
-			<a href="#{{group}}">{{group}}</a>
-		{{/groups}}
+		<div class='interactive-nav__inner'>
+			Jump to
+			{{#groups}}
+				<a href="#{{group}}">{{group}}</a>
+			{{/groups}}
+		</div>
 	</div>
 
 	{{#groups}}
