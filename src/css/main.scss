@@ -2,11 +2,21 @@
 @import "fonts";
 @import "swiper";
 
-$con: #1A60A9;
-// $con: #3163B6;
-$lab: #E42729;
-$ld: #FAB817;
-$snp: #FED905;
+$c-con: #1A60A9;
+$c-con-close: #2E6DC5;
+$c-con-distant: #3891E5;
+
+$c-lab: #E42729;
+$c-lab-close: #FF3600;
+$c-lab-distant: #FF5560;
+
+$c-libdem: #FAB817;
+$c-libdem-close: #FBBB00;
+$c-libdem-distant: #FFEA00;
+
+$c-snp: #FED905;
+$c-snp-close: #FED905;
+$c-snp-distant: #FFFA00;
 
 $c-grey: #63747C;
 
@@ -89,19 +99,31 @@ body {
      padding: 3px 5px 12px;
      width: calc(100% - 60px);
      &.swiper-slide--con {
-          background-color: $con;
+          background-color: $c-con;
+        //   .pledge:before {
+        //       background-color: $c-con-distant;
+        //   }
      }
 
      &.swiper-slide--ld {
-          background-color: $ld;
+          background-color: $c-libdem;
+        //   .pledge:before {
+        //       background-color: $c-libdem-distant;
+        //   }
      }
 
      &.swiper-slide--lab {
-          background-color: $lab;
+          background-color: $c-lab;
+        //   .pledge:before {
+        //       background-color: $c-lab-distant;
+        //   }
      }
 
      &.swiper-slide--snp {
-          background-color: $snp;
+          background-color: $c-snp;
+        //   .pledge:before {
+        //       background-color: $c-snp-distant;
+        //   }
      }
      &.swiper-slide--snp,
      &.swiper-slide--ld {
@@ -125,10 +147,28 @@ body {
      }
 }
 
-p.card-summary {
+.card-summary {
      padding-bottom: 4px;
      padding-top: 6px;
      clear: both;
+     .pledge {
+         font-size: 18px;
+         line-height: 22px;
+         display: block;
+         &:before {
+             content: '';
+             display: inline-block;
+             background-color: currentColor;
+             opacity: 0.8;
+             width: 13px;
+             height: 13px;
+             vertical-align: middle;
+             border-radius: 100%;
+             position: relative;
+             bottom: 1px;
+             margin-right: 4px;
+         }
+     }
 }
 
 p.card-party {
@@ -378,22 +418,22 @@ div.card-icon {
      border: 1px solid #fff;
 
      &:first-of-type {
-          background-color: $con;
-          border-color: $con;
+          background-color: $c-con;
+          border-color: $c-con;
      }
 
      &:nth-of-type(2) {
-          background-color: $lab;
-          border-color: $lab;
+          background-color: $c-lab;
+          border-color: $c-lab;
      }
 
      &:nth-of-type(3) {
-          background-color: $ld;
-          border-color: $ld;
+          background-color: $c-libdem;
+          border-color: $c-libdem;
      }
 
      &:nth-of-type(4) {
-          background-color: $snp;
-          border-color: $snp;
+          background-color: $c-snp;
+          border-color: $c-snp;
      }
 }
