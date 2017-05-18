@@ -4,19 +4,19 @@
 
 $c-con: #1A60A9;
 $c-con-close: #2E6DC5;
-$c-con-distant: #3891E5;
+$c-con-distant: #6697CC;
 
 $c-lab: #E42729;
 $c-lab-close: #FF3600;
-$c-lab-distant: #FF5560;
+$c-lab-distant: #FF8C8E;
 
 $c-libdem: #FAB817;
 $c-libdem-close: #FBBB00;
-$c-libdem-distant: #FFEA00;
+$c-libdem-distant: #C78B00;
 
 $c-snp: #FED905;
 $c-snp-close: #FED905;
-$c-snp-distant: #FFFA00;
+$c-snp-distant: #C7B131;
 
 $c-grey: #717D85;
 
@@ -97,23 +97,23 @@ body {
      width: calc(100% - 60px);
      &.swiper-slide--con {
           background-color: $c-con;
-        //   .pledge:before {
-        //       background-color: $c-con-distant;
-        //   }
+          .pledge:before {
+              background-color: $c-con-distant;
+          }
      }
 
      &.swiper-slide--ld {
           background-color: $c-libdem;
-        //   .pledge:before {
-        //       background-color: $c-libdem-distant;
-        //   }
+          .pledge:before {
+              background-color: $c-libdem-distant;
+          }
      }
 
      &.swiper-slide--lab {
           background-color: $c-lab;
-        //   .pledge:before {
-        //       background-color: $c-lab-distant;
-        //   }
+          .pledge:before {
+              background-color: $c-lab-distant;
+          }
      }
 
      &.swiper-slide--snp {
@@ -531,6 +531,12 @@ div.card-icon {
     @include mq(375px) {
         overflow: auto;
         width: auto;
+    }
+    @include mq(tablet) {
+        height: auto;
+        font-size: 22px;
+        line-height: 1em;
+        padding-top: 3px;
     }
 }
 // replaces social media headline
