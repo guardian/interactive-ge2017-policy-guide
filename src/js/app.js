@@ -1,12 +1,17 @@
 import Swiper from 'swiper'
+import tracker from './tracker'
 
 var isAndroidApp = (window.location.origin === "file://" ) ? true : false;
 
 function init() {
+    var analytics = tracker();
     var swipers = [];
     var cardStacks = document.querySelectorAll('.swiper-container');
 
     for (var s = 0; s < cardStacks.length; s++) {
+
+      cardStacks[s].setAttribute('data-stack-position', s+1);
+
       var swiper = new Swiper(cardStacks[s], {
             paginationClickable: true,
             loop: true,
@@ -32,10 +37,11 @@ function init() {
             if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
                 window.GuardianJSInterface.registerRelatedCardsTouch(false);
             }
+            var stackPosition = swiper.container[0].getAttribute('data-stack-position');
+            analytics.registerEvent('stack_card_view', stackPosition)
         });
       swipers.push(swiper);
     }
-
 
 }
 

@@ -1,14 +1,32 @@
 import mainTemplate from './src/templates/main.html!text'
 import cardstackTemplate from './src/templates/cardstack.html!text'
 import cardTemplate from './src/templates/card.html!text'
+import adTemplate from './src/templates/advert.html!text'
 
-import Mustache from 'mustache'
+
+import Handlebars from 'handlebars'
 import rp from 'request-promise'
 
-var partialTemplates = {
+Handlebars.registerPartial({
 	"cardstack": cardstackTemplate,
-	"card": cardTemplate
-};
+	"card": cardTemplate,
+	"advert": adTemplate
+});
+
+Handlebars.registerHelper({
+  'if_eq': function(a, b, opts) {
+    if(a === b){
+        return opts.fn(this);
+    }
+    return opts.inverse(this);
+  },
+	'createAdSlot': function(i, opts){
+		if( (i+1)%3 == 0 && i+1 < 9){
+			return opts.fn(this);
+		}
+		return opts.inverse(this);
+	}
+});
 
 export function render() {
     return rp({
@@ -16,7 +34,7 @@ export function render() {
         // uri: 'https://gdn-cdn.s3.amazonaws.com/2015/05/election/data/mega.json',
         json: true
     }).then((data) => {
-      var html = Mustache.render(mainTemplate, data, partialTemplates);
-      return html;
+			var content = Handlebars.compile( mainTemplate, { commpat: true } );
+      return content(data);
     });
 }
