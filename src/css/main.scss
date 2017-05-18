@@ -87,16 +87,10 @@ body {
      color: #fff;
      border-radius: 6px;
  }
- // .swiper-slide:nth-child(2n) {
- //     width: 40%;
- // }
- // .swiper-slide:nth-child(3n) {
- //     width: 20%;
- // }
 
 .swiper-slide {
      box-sizing: border-box;
-     padding: 3px 5px 12px;
+     padding: 3px 8px 12px;
      width: calc(100% - 60px);
      &.swiper-slide--con {
           background-color: $c-con;
@@ -141,9 +135,12 @@ body {
      @include mq(tablet) {
           // flex: 1;
           // flex-basis: 300px;
-          width: 300px;
+          width: 340px;
           margin-right: 20px;
           margin-bottom: 24px;
+     }
+     @include mq(desktop) {
+         width: 300px;
      }
 }
 
@@ -280,11 +277,12 @@ div.card-icon {
     }
     &__text {
         padding-top: 12px;
-        padding-left: 10px;
         width: calc(50% - 10px);
         max-width: 460px;
         min-height: 120px;
         @include mq(tablet) {
+            padding-top: 6px;
+            padding-bottom: 12px;
             min-height: 160px;
         }
 
@@ -580,10 +578,27 @@ div.card-icon {
     display: flex;
     justify-content: center;
     background-color: guss-colour(white);
+    position: relative;
+    z-index: 0;
 
     @include mq($from: tablet) {
         .ad-slot--rendered {
             margin: 20px 0 40px 0;
         }
+    }
+}
+
+.article-footer {
+    padding: 0 20px;
+    font-size: 18px;
+    line-height: 24px;
+    &__wrap-up {
+    }
+    &__end-notes {
+        margin-top: 24px;
+        padding-top: 6px;
+        border-top: 2px solid $c-bar;
+        font-family: 'Guardian Text Sans Web', 'Guardian Sans Web', helvetica, arial, sans-serif;
+        color: #767676;
     }
 }
