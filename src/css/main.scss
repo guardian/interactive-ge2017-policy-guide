@@ -73,7 +73,7 @@ body {
           padding-left: 20px;
           padding-right: 20px;
      }
-     @include mq(leftCol) {
+     @include mq($from:leftCol, $until:wide) {
          padding-left: 180px;
      }
 
@@ -145,6 +145,14 @@ body {
      @include mq(desktop) {
          width: 300px;
      }
+
+    //  remove this when we have 4 parties in
+     @include mq(wide) {
+         width: 380px;
+     }
+    //  remove until here
+
+
 }
 
 .card-summary {
