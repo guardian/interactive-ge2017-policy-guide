@@ -201,10 +201,18 @@ p.card-links {
     }
 
     a {
-        display: block;
         color: #fff;
-        display: inline;
-        border-bottom: 1px solid rgba(255,255,255,0.4);
+        display: block;
+        clear: both;
+        span {
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+        }
+        &:hover {
+            text-decoration: none;
+        }
+        &:nth-of-type(n+1) {
+            margin-top: 3px;
+        }
     }
 }
 
