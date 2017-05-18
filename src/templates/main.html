@@ -24,5 +24,10 @@
 		{{>cardstack}}
 		<div class='pagination'></div>
 	</div>
+
+	{{#createAdSlot @index}}
+		{{> advert index=@index }}
+	{{/createAdSlot}}
+
 	{{/groups}}
 </div>

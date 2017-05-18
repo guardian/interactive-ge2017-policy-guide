@@ -397,3 +397,15 @@ div.card-icon {
           border-color: $snp;
      }
 }
+
+.interactive-ad-banner {
+    display: flex;
+    justify-content: center;
+    background-color: guss-colour(white);
+
+    @include mq($from: tablet) {
+        .ad-slot--rendered {
+            margin: 20px 0 40px 0;
+        }
+    }
+}
