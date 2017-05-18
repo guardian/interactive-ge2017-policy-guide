@@ -391,6 +391,7 @@ div.card-icon {
 .interactive-nav {
     &__inner {
         position: relative;
+        padding-right: 20px;
         &:before {
             content: '';
             position: absolute;
@@ -407,11 +408,8 @@ div.card-icon {
             }
         }
     }
-     padding-top: 12px;
-     padding-bottom: 18px;
      color: rgba(0,0,0,0.3);
      box-sizing: border-box;
-     padding-left: 10px;
      position: -webkit-sticky;
      position: sticky;
      border-bottom: 2px solid $c-grey;
@@ -419,13 +417,18 @@ div.card-icon {
      font-family: 'Guardian Sans Web', 'Guardian Text Sans Web', Helvetica, Arial, sans-serif;
      font-size: 16px;
      line-height: 22px;
+     padding-top: 3px;
+     padding-left: 10px;
+     padding-bottom: 6px;
 
      @include mq($until: tablet) {
-          padding-left: 20px;
+         padding-left: 20px;
      }
 
      @include mq(tablet) {
           padding-left: 20px;
+          padding-top: 12px;
+          padding-bottom: 18px;
      }
 
      @include mq(leftCol) {
@@ -449,7 +452,7 @@ div.card-icon {
         display: inline-block;
         color: $c-grey;
         text-decoration: none;
-        padding: 4px 0;
+        padding: 3px 0;
         @include mq(desktop) {
             padding: 0;
         }
@@ -570,11 +573,11 @@ div.card-icon {
         margin-top: 0;
         position: absolute;
         z-index: 20;
-        top: -60px;
+        top: -114px;
     }
 
     .meta__extras {
-        border-top: 2px solid $c-bar;
+        border-top: 1px solid $c-bar;
     }
     .meta__save-for-later,
     .meta__number,
