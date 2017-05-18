@@ -472,23 +472,55 @@ div.card-icon {
           border-color: $c-snp;
      }
 }
-
+.badge-slot {
+    width: 62px;
+    height: 48px;
+}
+.content__headline,
+.content__headline::before,
+.content__section-label__link {
+    font-size: 28px;
+    line-height: 28px;
+}
+.content__headline::before {
+    color: #333;
+    font-weight: 800;
+    @include mq(tablet) {
+        font-size: 72px;
+        line-height: 72px;
+    }
+}
+.content__section-label__link {
+    display: inline-block;
+    height: 28px;
+    width: 210px;
+    overflow: hidden;
+    color: #63747C;
+    @include mq(375px) {
+        overflow: auto;
+        width: auto;
+    }
+}
 
 // replaces social media headline
 .content__headline {
     font-size: 0;
+    margin-top: -29px;
+    padding-left: 68px;
     &::before {
-        content: "Manifestos";
-        font-size: 72px;
-        line-height: 72px;
-        font-weight: 800;
+        content: "The Manifestos";
     }
 }
 .content__standfirst {
     color: #767676;
-    font-size: 22px;
-    line-height: 28px;
+    font-size: 18px;
+    line-height: 24px;
     font-weight: 400;
+    @include mq(tablet) {
+        color: #767676;
+        font-size: 22px;
+        line-height: 28px;
+    }
     a {
         color: #444;
         border-bottom: 1px solid #767676;
