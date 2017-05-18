@@ -384,7 +384,7 @@ div.card-icon {
         }
     }
      padding-top: 12px;
-     padding-bottom: 12px;
+     padding-bottom: 18px;
      color: rgba(0,0,0,0.3);
      box-sizing: border-box;
      padding-left: 10px;
@@ -394,7 +394,7 @@ div.card-icon {
      background-color: #eaeaea;
      font-family: 'Guardian Sans Web', 'Guardian Text Sans Web', Helvetica, Arial, sans-serif;
      font-size: 16px;
-     line-height: 24px;
+     line-height: 22px;
 
      @include mq($until: tablet) {
           padding-left: 20px;
@@ -425,7 +425,7 @@ div.card-icon {
         display: inline-block;
         color: $c-grey;
         text-decoration: none;
-        padding: 5px 0;
+        padding: 4px 0;
         @include mq(desktop) {
             padding: 0;
         }
@@ -472,6 +472,7 @@ div.card-icon {
           border-color: $c-snp;
      }
 }
+
 .badge-slot {
     width: 62px;
     height: 48px;
@@ -501,7 +502,6 @@ div.card-icon {
         width: auto;
     }
 }
-
 // replaces social media headline
 .content__headline {
     font-size: 0;
@@ -559,9 +559,6 @@ div.card-icon {
         width: 220px;
         left: -240px;
     }
-}
-.content__section-label a {
-    color: $c-grey;
 }
 // removes second date line
 .content__head .content__main-column .content__dateline {
