@@ -364,23 +364,44 @@ div.card-icon {
             z-index: 1;
             height: 24px;
             width: 100%;
+            transform: translateX(50%);
+            transition: all 500ms cubic-bezier(0.000, 0.000, 0.200, 1.000);
             @include mq(tablet) {
                 height: 30px;
             }
             &.bar-1 {
-                transform: translateX(10%);
+                opacity: 1;
+                transition-delay: 0ms;
             }
             &.bar-2 {
-                opacity: 0.7;
-                transform: translateX(6%);
+                opacity: 0.6;
+                transition-delay: 60ms;
             }
             &.bar-3 {
-                opacity: 0.5;
-                transform: translateX(19%);
+                opacity: 0.35;
+                transition-delay: 120ms;
             }
             &.bar-4 {
-                opacity: 0.3;
-                transform: translateX(0);
+                opacity: 0.1;
+                transition-delay: 180ms;
+            }
+            .visible & {
+                &.bar-1 {
+                    opacity: 1;
+                    transform: translateX(10%);
+                }
+                &.bar-2 {
+                    opacity: 0.7;
+                    transform: translateX(6%);
+                }
+                &.bar-3 {
+                    opacity: 0.5;
+                    transform: translateX(19%);
+                }
+                &.bar-4 {
+                    opacity: 0.3;
+                    transform: translateX(0);
+                }
             }
         }
     }
