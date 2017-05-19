@@ -59,7 +59,19 @@ $c-bar: #D4D9DF;
     .interactive-atom {
         border-top: 0;
     }
+    .article__header {
+        #section {
+            display: none;
+        }
+        #headline {
+            font-weight: 600;
+        }
+        .standfirst {
+            margin-top: -18px;
+        }
+    }
 }
+
 
 body {
      background-color: #eaeaea;
