@@ -42,8 +42,35 @@ function init() {
         });
       swipers.push(swiper);
     }
-
 }
+
+// init jump bar
+var jumpLinks = document.querySelectorAll('[data-jump-to]'), i;
+for (i = 0; i < jumpLinks.length; ++i) {
+    var jumpLink = jumpLinks[i];
+    jumpLink.addEventListener("click", function(e){
+        e.preventDefault();
+        var jumpTarget = this.getAttribute('data-jump-to');
+        var jumpDiv = document.querySelector('[id="'+jumpTarget+'"]');
+        var body = document.querySelector('body');
+        var jumpBar = document.querySelector('.interactive-nav');
+        var dadgummit = 5;
+        var jumpOffset = body.scrollTop + jumpDiv.getBoundingClientRect().top - jumpBar.offsetHeight + dadgummit;
+        scrollTo(body, jumpOffset, 360);
+    },false);
+}
+function scrollTo(element, to, duration) {
+    if (duration <= 0) return;
+    var difference = to - element.scrollTop;
+    var perTick = difference / duration * 10;
+
+    setTimeout(function() {
+        element.scrollTop = element.scrollTop + perTick;
+        if (element.scrollTop === to) return;
+        scrollTo(element, to, duration - 10);
+    }, 10);
+}
+
 
 if(document.querySelector("body").clientWidth < 740) {
     init();
