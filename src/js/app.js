@@ -2,7 +2,7 @@ import Swiper from 'swiper'
 import tracker from './tracker'
 import ScrollTrigger from './scrollTrigger'
 
-var isAndroidApp = (window.location.origin === "file://" ) ? true : false;
+var isAndroidApp = (window.location.origin === "file://" && /(android)/i.test(navigator.userAgent) ) ? true : false;
 
 function init() {
     var analytics = tracker();
