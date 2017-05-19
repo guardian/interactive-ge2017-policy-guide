@@ -133,6 +133,7 @@ body {
      p {
           margin: 0;
           @include fs-headline(2);
+          font-family: "Guardian Text Egyptian Web", Georgia, serif;
      }
 
      @include mq(tablet) {
@@ -197,8 +198,9 @@ p.card-party {
      padding-top: 4px;
 
      &::before {
-          content: 'Analysis ';
+          content: 'Analysis: ';
           font-weight: 700;
+          font-family: "Guardian Egyptian Web", Georgia, serif;
      }
 }
 
@@ -617,11 +619,12 @@ div.card-icon {
         margin-top: 0;
         position: absolute;
         z-index: 20;
-        top: -114px;
+        top: 9px;
+        z-index: 200;
     }
 
     .meta__extras {
-        border-top: 1px solid $c-bar;
+        border-top: 2px solid $c-bar;
     }
     .meta__save-for-later,
     .meta__number,
@@ -669,6 +672,9 @@ div.card-icon {
     }
 }
 
+.byline {
+    margin-bottom: 12px;
+}
 .article-footer {
     padding: 0 20px;
     font-size: 18px;
