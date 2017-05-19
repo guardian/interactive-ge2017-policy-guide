@@ -55,7 +55,7 @@ $c-bar: #D4D9DF;
 
 body {
      background-color: #eaeaea;
-     overflow-x: initial;
+     overflow-x: hidden;
 }
 
 .swiper-container {
@@ -301,6 +301,12 @@ div.card-icon {
             padding-bottom: 12px;
             min-height: 160px;
         }
+        @include mq(leftCol) {
+            max-width: 380px;
+        }
+        @include mq(wide) {
+            max-width: 460px;
+        }
 
         &__title {
             font-size: 26px;
@@ -344,6 +350,12 @@ div.card-icon {
             z-index: 3;
             width: 200%;
             background-color: $c-bar;
+            @include mq(leftCol) {
+                left: -72%;
+            }
+            @include mq(wide) {
+                left: -83%;
+            }
         }
         &__image {
             position: absolute;
@@ -364,7 +376,10 @@ div.card-icon {
             z-index: 1;
             height: 24px;
             width: 100%;
-            transform: translateX(50%);
+            transform: translateX(24%);
+            @include mq(tablet) {
+                transform: translateX(24%);
+            }
             transition: all 500ms cubic-bezier(0.000, 0.000, 0.200, 1.000);
             @include mq(tablet) {
                 height: 30px;
@@ -653,6 +668,14 @@ div.card-icon {
     padding: 0 20px;
     font-size: 18px;
     line-height: 24px;
+    max-width: 620px;
+    clear: both;
+    @include mq(leftCol) {
+        margin-left: 160px;
+    }
+    @include mq(wide) {
+        margin-left: 240px;
+    }
     &__wrap-up {
     }
     &__end-notes {

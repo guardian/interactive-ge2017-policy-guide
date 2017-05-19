@@ -73,7 +73,9 @@ function scrollTo(element, to, duration) {
 }
 
 // scrollTrigger
-var trigger = new ScrollTrigger();
+var trigger = new ScrollTrigger({
+    offset: { x: -50, y: 50 }
+});
 
 
 if(document.querySelector("body").clientWidth < 740) {
