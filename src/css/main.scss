@@ -607,7 +607,8 @@ div.card-icon {
 }
 // replaces social media headline
 .content__headline {
-    font-size: 0;
+    font-size: 0.1px;
+    color: #eaeaea;
     width: auto;
     &::before {
         content: "Manifesto guide";
