@@ -1,6 +1,6 @@
 import Swiper from 'swiper'
 import tracker from './tracker'
-import ScrollTrigger from 'scrolltrigger-classes'
+import ScrollTrigger from './scrollTrigger'
 
 var isAndroidApp = (window.location.origin === "file://" ) ? true : false;
 
@@ -73,13 +73,8 @@ function scrollTo(element, to, duration) {
 }
 
 // scrollTrigger
-// document.addEventListener('DOMContentLoaded', function(){
-setTimeout(function() {
-    var trigger = new ScrollTrigger();
+var trigger = new ScrollTrigger();
 
-}, 2000);
-//     console.log('hhee')
-// });
 
 if(document.querySelector("body").clientWidth < 740) {
     init();
