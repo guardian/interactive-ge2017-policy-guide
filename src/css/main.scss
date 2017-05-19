@@ -385,7 +385,7 @@ div.card-icon {
             width: 100%;
             transform: translateX(24%);
             @include mq(tablet) {
-                transform: translateX(24%);
+                transform: translateX(21%);
             }
             transition: all 500ms cubic-bezier(0.000, 0.000, 0.200, 1.000);
             @include mq(tablet) {
@@ -406,6 +406,24 @@ div.card-icon {
             &.bar-4 {
                 opacity: 0.1;
                 transition-delay: 180ms;
+            }
+            @include mq($until:mobileLandscape) {
+                &.bar-1 {
+                    opacity: 1;
+                    transform: translateX(10%);
+                }
+                &.bar-2 {
+                    opacity: 0.7;
+                    transform: translateX(6%);
+                }
+                &.bar-3 {
+                    opacity: 0.5;
+                    transform: translateX(19%);
+                }
+                &.bar-4 {
+                    opacity: 0.3;
+                    transform: translateX(0);
+                }
             }
             .visible & {
                 &.bar-1 {
