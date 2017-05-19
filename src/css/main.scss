@@ -47,10 +47,18 @@ $c-bar: #D4D9DF;
      }
 }
 
-.ios,.android {
-     p, h1, h2, h3 {
-          margin: 0; padding:0;
-     }
+.ios,
+.android,
+.windows {
+    p, h1, h2, h3 {
+        margin: 0; padding:0;
+    }
+    .interactive-nav {
+        background-color: transparent;
+    }
+    .interactive-atom {
+        border-top: 0;
+    }
 }
 
 body {
