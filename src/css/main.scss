@@ -274,9 +274,6 @@ div.card-icon {
     margin-bottom: 12px;
     margin-top: -2px;
     z-index: 140;
-    @include mq($until: tablet) {
-         border-bottom: 2px solid #dcdcdc;
-    }
     border-top: 2px solid $c-grey;
     // margin-top: 6px;
     @include mq($until: tablet) {
