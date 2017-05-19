@@ -1,13 +1,15 @@
 <div class="main">
 	<div class="interactive-nav">
-		Jump to
-		{{#groups}}
-			<a href="#{{group}}">{{group}}</a>
-		{{/groups}}
+		<div class='interactive-nav__inner'>
+			Jump to
+			{{#groups}}
+				<a href="#{{group}}" data-jump-to='{{group}}'>{{group}}</a>
+			{{/groups}}
+		</div>
 	</div>
 
 	{{#groups}}
-	<div class='policy-group' id="{{group}}">
+	<div class='policy-group' id="{{group}}" data-scroll>
 		<div class="policy-group__header">
 			<div class='policy-group__header__text'>
 				<h2 class='policy-group__header__text__title'>{{group}}</h2>
@@ -30,4 +32,9 @@
 	{{/createAdSlot}}
 
 	{{/groups}}
+
+	<div class='article-footer'>
+		<div class='article-footer__wrap-up'><p>{{{wrapup}}}</p></div>
+		<div class='article-footer__end-notes'><p>{{{endnotes}}}</p></div>
+	</div>
 </div>

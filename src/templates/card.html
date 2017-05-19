@@ -1,14 +1,21 @@
 <div class="card-icon" style="background-image: url('<%= path %>/assets/icons/{{card}}.png')"></div>
 <p class="card-party">{{party}}</p>
-<p class="card-summary">{{summary}}</p>
+
+<div class="card-summary">
+	{{#each summary}}
+		<p class='pledge'>{{.}}</p>
+	{{/each}}
+</div>
+
 {{#if analysis}}
 	<p class="card-analysis">{{analysis}}</p>
 {{/if}}
+
+
 {{#if links}}
 	<p class="card-links">
 		{{#each links}}
-
-			<a href="{{url}}">{{headline}}</a>
+			<a href="{{url}}"><span>{{headline}}</span></a>
 		{{/each}}
 	</p>
 {{/if}}
