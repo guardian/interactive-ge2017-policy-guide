@@ -309,6 +309,7 @@ div.card-icon {
             font-size: 26px;
             line-height: 22px;
             margin-bottom: 5.5px;
+            color: #005689;
             @include mq(tablet) {
                 font-size: 36px;
                 line-height: 42px;
@@ -391,11 +392,12 @@ div.card-icon {
 .interactive-nav {
     &__inner {
         position: relative;
+        // margin-top: -3px;
         padding-right: 20px;
         &:before {
             content: '';
             position: absolute;
-            top: -12px;
+            top: -9px;
             left: 0;
             right: 20px;
             height: 2px;
@@ -408,13 +410,15 @@ div.card-icon {
             }
         }
     }
-     color: rgba(0,0,0,0.3);
+    font-weight: 800;
+    color: #005689;
+    //  color: rgba(0,0,0,0.3);
      box-sizing: border-box;
      position: -webkit-sticky;
      position: sticky;
      border-bottom: 2px solid $c-grey;
      background-color: #eaeaea;
-     font-family: 'Guardian Sans Web', 'Guardian Text Sans Web', Helvetica, Arial, sans-serif;
+     font-family: 'Guardian Text Sans Web', Helvetica, Arial, sans-serif;
      font-size: 16px;
      line-height: 22px;
      padding-top: 3px;
@@ -427,7 +431,7 @@ div.card-icon {
 
      @include mq(tablet) {
           padding-left: 20px;
-          padding-top: 12px;
+          padding-top: 9px;
           padding-bottom: 18px;
      }
 
@@ -449,6 +453,7 @@ div.card-icon {
 
 
      a {
+         font-weight: 400;
         display: inline-block;
         color: $c-grey;
         text-decoration: none;
@@ -555,6 +560,7 @@ div.card-icon {
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
+    margin-top: -24px;
     @include mq(tablet) {
         color: #767676;
         font-size: 22px;
@@ -567,7 +573,7 @@ div.card-icon {
     }
 }
 .content--interactive .content__meta-container {
-    margin-top: 12px;
+    margin-bottom: 0;
     min-height: none;
     @include mq(leftCol) {
         margin-top: 0;
@@ -638,4 +644,8 @@ div.card-icon {
         font-family: 'Guardian Text Sans Web', 'Guardian Sans Web', helvetica, arial, sans-serif;
         color: #767676;
     }
+}
+
+figure.element.element-atom {
+    margin-top: 9px;
 }
