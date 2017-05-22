@@ -120,12 +120,18 @@ body {
           .pledge:before {
               background-color: $c-con-distant;
           }
+          .card-analysis {
+              border-top-color: $c-con-close;
+          }
      }
 
      &.swiper-slide--ld {
           background-color: $c-libdem;
           .pledge:before {
               background-color: $c-libdem-distant;
+          }
+          .card-analysis {
+              border-top-color: $c-libdem-close;
           }
      }
 
@@ -134,6 +140,9 @@ body {
           .pledge:before {
               background-color: $c-lab-distant;
           }
+          .card-analysis {
+              border-top-color: $c-lab-close;
+          }
      }
 
      &.swiper-slide--snp {
@@ -141,6 +150,9 @@ body {
         //   .pledge:before {
         //       background-color: $c-snp-distant;
         //   }
+          .card-analysis {
+              border-top-color: $c-snp-close;
+          }
      }
      &.swiper-slide--snp,
      &.swiper-slide--ld {
