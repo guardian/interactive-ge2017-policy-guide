@@ -258,6 +258,7 @@ body {
 
 p.card-party {
      @include fs-header(5);
+     padding-bottom: 8px;
 }
 
 .card-analysis {
