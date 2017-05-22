@@ -651,7 +651,7 @@ div.card-icon {
         text-decoration: none;
     }
 }
-.content--interactive .content__meta-container {
+.content--interactive .content__main-column:not(.content__meta-footer) .content__meta-container {
     margin-bottom: 0;
     min-height: none;
     @include mq(leftCol) {
