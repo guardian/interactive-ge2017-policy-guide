@@ -26,6 +26,10 @@ $c-ukip: #7D0068;
 $c-ukip-close: #960080;
 $c-ukip-distant: #DC9AD1;
 
+$c-plaidcymru: #397031;
+$c-plaidcymru-close: #47833D;
+$c-plaidcymru-distant: #53AE45 ;
+
 $c-grey: #717D85;
 
 $c-bar: #D4D9DF;
@@ -183,6 +187,19 @@ body {
           }
           .card-analysis {
               border-top-color: $c-ukip-close;
+          }
+          .card-icon {
+              display: none;
+          }
+     }
+
+     &.swiper-slide--plaidcymru {
+          background-color: $c-plaidcymru;
+          .pledge:before {
+              background-color: $c-plaidcymru-distant;
+          }
+          .card-analysis {
+              border-top-color: $c-plaidcymru-close;
           }
           .card-icon {
               display: none;
@@ -629,6 +646,7 @@ div.card-icon {
           background-color: $c-snp;
           border-color: $c-snp;
      }
+
 }
 
 .badge-slot {
