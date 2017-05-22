@@ -18,6 +18,14 @@ $c-snp: #FED905;
 $c-snp-close: #FED905;
 $c-snp-distant: #C7B131;
 
+$c-green: #53AC32;
+$c-green-close: #64BC3E;
+$c-green-distant: #9BDC84;
+
+$c-ukip: #7D0068;
+$c-ukip-close: #960080;
+$c-ukip-distant: #DC9AD1;
+
 $c-grey: #717D85;
 
 $c-bar: #D4D9DF;
@@ -147,13 +155,40 @@ body {
 
      &.swiper-slide--snp {
           background-color: $c-snp;
-        //   .pledge:before {
-        //       background-color: $c-snp-distant;
-        //   }
+          .pledge:before {
+              background-color: $c-snp-distant;
+          }
           .card-analysis {
               border-top-color: $c-snp-close;
           }
      }
+
+     &.swiper-slide--green {
+          background-color: $c-green;
+          .pledge:before {
+              background-color: $c-green-distant;
+          }
+          .card-analysis {
+              border-top-color: $c-green-close;
+          }
+          .card-icon {
+              display: none;
+          }
+     }
+
+     &.swiper-slide--ukip {
+          background-color: $c-ukip;
+          .pledge:before {
+              background-color: $c-ukip-distant;
+          }
+          .card-analysis {
+              border-top-color: $c-ukip-close;
+          }
+          .card-icon {
+              display: none;
+          }
+     }
+
      &.swiper-slide--snp,
      &.swiper-slide--ld {
          color: #333;
