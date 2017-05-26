@@ -231,13 +231,6 @@ body {
          width: 300px;
      }
 
-    //  remove this when we have 4 parties in
-     @include mq(wide) {
-         width: 380px;
-     }
-    //  remove until here
-
-
 }
 
 .card-summary {
@@ -633,16 +626,21 @@ div.card-icon {
      }
 
      &:nth-of-type(2) {
+          background-color: $c-green;
+          border-color: $c-green;
+     }
+
+     &:nth-of-type(3) {
           background-color: $c-lab;
           border-color: $c-lab;
      }
 
-     &:nth-of-type(3) {
+     &:nth-of-type(4) {
           background-color: $c-libdem;
           border-color: $c-libdem;
      }
 
-     &:nth-of-type(4) {
+     &:nth-of-type(5) {
           background-color: $c-snp;
           border-color: $c-snp;
      }
