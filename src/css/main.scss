@@ -337,13 +337,13 @@ div.card-icon {
 }
 
 .pagination {
-     text-align: center;
-     line-height: 5px !important;
+    text-align: center;
+    line-height: 5px !important;
     padding: 18px 0 26px;
 
-     .swiper-pagination-bullet {
-          margin-right: 2px;
-     }
+    .swiper-pagination-bullet {
+        margin-right: 2px;
+    }
 }
 
 
@@ -648,28 +648,25 @@ div.card-icon {
 }
 
 .badge-slot {
-    width: 62px;
-    height: 48px;
+    width: 42px;
+    height: 30px;
 }
 .content__headline,
-.content__headline::before,
+.content__headline,
 .content__section-label__link {
     font-size: 28px;
     line-height: 28px;
 }
-.content__headline::before {
+.content__headline {
     color: #333;
     font-weight: 800;
-    margin-top: -29px;
-    padding-left: 68px;
     display: block;
     width: auto;
     @include mq(tablet) {
-        font-size: 72px;
-        line-height: 72px;
+        font-size: 44px;
+        line-height: 45px;
         margin-top: 12px;
         padding-top: 0;
-        margin-left: -67px;
     }
 }
 .content__section-label__link {
@@ -689,21 +686,20 @@ div.card-icon {
         padding-top: 3px;
     }
 }
-// replaces social media headline
-.content__headline {
-    font-size: 0.1px;
-    color: #eaeaea;
-    width: auto;
-    &::before {
-        content: "Manifesto guide";
-    }
-}
+// // replaces social media headline
+// .content__headline {
+//     font-size: 0.1px;
+//     color: #333;
+//     width: auto;
+//     &::before {
+//         content: "Manifesto guide";
+//     }
+// }
 .content__standfirst {
     color: #767676;
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
-    margin-top: -24px;
     @include mq(tablet) {
         color: #767676;
         font-size: 22px;
