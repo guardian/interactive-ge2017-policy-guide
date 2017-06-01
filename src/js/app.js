@@ -22,24 +22,33 @@ function init() {
             pagination: ".pagination",
             centeredSlides: true
         })
-        .on('slideChangeStart', function(currentSwiper, event) {
-            swipers.forEach(function(s) {
+        .on('slideChangeEnd', function(currentSwiper, event) {
+
+            swipers.forEach(function(s,i) {
+              var eq = (currentSwiper == s) ? true : false;
+              if(eq){
+                var stackPosition = swiper.container[0].getAttribute('data-stack-position');
+                analytics.registerEvent('stack_card_view', i)
+              }
+
                 if (s.activeIndex != currentSwiper.activeIndex) {
-                    s.slideTo(currentSwiper.activeIndex, 0);
+                  //s.activeIndex = currentSwiper.activeIndex;
+                    s.slideTo(currentSwiper.activeIndex, 0, false);
+                } else {
+
+
                 }
             });
         })
-        .on('onTouchStart', function(swiper, e) {
+        .on('onTouchStart', function(currentSwiper, e) {
             if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
                 window.GuardianJSInterface.registerRelatedCardsTouch(true);
             }
         })
-        .on('onTouchEnd', function(swiper, e) {
+        .on('onTouchEnd', function(currentSwiper, e) {
             if (isAndroidApp && window.GuardianJSInterface.registerRelatedCardsTouch) {
                 window.GuardianJSInterface.registerRelatedCardsTouch(false);
             }
-            var stackPosition = swiper.container[0].getAttribute('data-stack-position');
-            analytics.registerEvent('stack_card_view', stackPosition)
         });
       swipers.push(swiper);
     }

@@ -29,7 +29,7 @@ export default function tracker(){
         data = data + '_' + events[e];
       }
 
-      w.ga("send", "event", "interactives", e, data);
+      w.ga("send", "event", "interactives", e, 'swipe_' + data);
     }
   }
 
