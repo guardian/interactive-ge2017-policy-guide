@@ -19,17 +19,19 @@ export default function tracker(){
         initialized = true;
       }
       //send event
-      console.log(data)
+
       if( e === 'stack_card_view'){
 
         if( !events[data]){
           events[data] = 0;
         }
         events[data] += 1;
-        data = 'v' + data + '_' + events[data];
+
+        data = data + '_' + events[data];
+
       }
 
-      w.ga("send", "event", "interactives", e, data);
+      w.ga("send", "event", "interactives", e, 'swipe_' + data);
     }
   }
 
