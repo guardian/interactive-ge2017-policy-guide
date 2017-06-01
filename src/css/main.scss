@@ -641,8 +641,18 @@ div.card-icon {
      }
 
      &:nth-of-type(5) {
-          background-color: $c-snp;
-          border-color: $c-snp;
+          background-color: $c-plaidcymru;
+          border-color: $c-plaidcymru;
+     }
+
+     &:nth-of-type(6) {
+          background-color: $c-snp-distant;
+          border-color: $c-snp-distant;
+     }
+
+     &:nth-of-type(7) {
+          background-color: $c-ukip;
+          border-color: $c-ukip;
      }
 
 }
